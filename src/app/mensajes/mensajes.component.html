@@ -1,0 +1,49 @@
+<div class="x">
+    <div class="row">
+      <div class="col col-lg-2">
+        <button class="btn-change" btn-change routerLink ="/home">Recibidos</button>
+        <button class="btn-change" btn-change routerLink ="/enviados">Enviados</button>
+        <button class="btn-change" btn-change routerLink ="/mensajes">Nuevo Mensaje</button>
+      </div>
+      <div class="divmensaje col col-lg-4" id="divmensaje">
+        
+        <form [formGroup]="form">
+          <!-- Name input -->
+          <div class="form-outline mb-4">
+            <select class="form-control" formControlName="receiverId">
+                <option  *ngFor= "let item of usuarios">{{item.username}}</option>
+            </select>
+
+          </div>
+    
+          <!-- Message input -->
+          <div class="form-outline mb-4">
+            <textarea class="form-control" formControlName="text" id="form4Example3" rows="4"></textarea>
+            <label  class="form-label" for="form4Example3">Mensaje</label>
+          </div>
+        
+          <!-- Checkbox -->
+          <ng-template #contenido let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title">Mensaje enviado correctamente</h4>
+                
+                    
+             
+            </div>
+            <div class="modal-body">
+                <h6>Tu mensaje fue enviado con exito, el receptor ya lo tiene en su bandeja de entrada ;)</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" (click)="modal.close()">Ok!</button>
+            </div>
+        </ng-template>
+        
+
+        
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-secondary btn-lg" (click)="sendMessage();openCentrado(contenido)">Enviar mensaje</button>
+        </form>
+      </div>
+  
+    </div>
+  

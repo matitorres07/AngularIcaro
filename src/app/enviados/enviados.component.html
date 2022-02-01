@@ -1,0 +1,31 @@
+<div class="x">
+    <div class="row">
+      <div class="col col-lg-2">
+        <button class="btn-change" btn-change routerLink ="/home">Recibidos</button>
+        <button class="btn-change" btn-change routerLink ="/enviados">Enviados</button>
+        <button class="btn-change" btn-change routerLink ="/mensajes">Nuevo Mensaje</button>
+      </div>
+      <div class="col col-lg-10">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                
+                <th scope="col">De</th>
+                <th scope="col">Para</th>
+                <th scope="col">Mensaje</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor= "let item of enviados">
+                <td>{{item.senderId}}</td>
+                <td>{{item.receiverId}}</td>
+                <td>{{item.text}}</td>
+              </tr>
+           
+            </tbody>
+          </table>
+          
+      </div>
+  
+    </div>
+  

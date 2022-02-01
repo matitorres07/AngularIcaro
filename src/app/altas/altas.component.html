@@ -1,0 +1,97 @@
+<section class="h-50 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0 ">
+              <div class="col-xl-6 d-none d-xl-block justify-content-center align-self-center">
+                <img
+                  src="./assets/img/registro.jpg"
+                  alt="Sample photo"
+                  class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;"
+                />
+              </div>
+              <div class="col-xl-4">
+                <div class="card-body p-md-5 text-black">
+                  
+  
+                  
+                    <div>
+                      <form [formGroup]="form">
+                        <p>
+                          Nombre: <br/>
+                          <input  type="text" class="form-control" formControlName="name" placeholder="Ingresa tu nombre">
+                          
+                        </p>
+                        <p>
+                            Apellido: <br/>
+                            <input class="form-control" type="text" formControlName="lastname" placeholder="Ingresa tu apellido">
+                          </p>
+                          <p>
+                            Nombre de usuario: <br/>
+                            <input class="form-control" type="text" formControlName="username" placeholder="Ingresa tu Usuario">
+                          </p>
+                          <p>
+                            Contraseña <br/>
+                            <input  class="form-control" type="password" formControlName="password">
+                          </p>
+                          <p>
+                            Confirmar Contraseña <br/>
+                            <input class="form-control" type="password" formControlName="passwordconf">
+                            
+                          </p>
+                          <div *ngIf="showErrorMessagePass">
+                            <h6>Las contraseñas deben combinar</h6>
+                        </div>
+                    
+                        <p>
+                          Pais: <br/>
+                          <select  formControlName="country">
+                            <option value="Mustafar">Mustafar</option>
+                            <option value="Mygeeto">Mygeeto</option>
+                            <option value="Naboo">Naboo</option>
+                            <option value="Tatooine">Tatooine</option>
+                            <option value="Vortex">Vortex</option>
+                          </select>
+                        </p>
+                        <p>
+                            Ciudad: <br/>
+                            <select formControlName="city">
+                              <option value="Ahdjok">Ahdjok</option>
+                              <option value="Andobi Exa">Andobi Exa</option>
+                              <option value="Kaantay">Kaantay</option>
+                              <option value="Buerhoz">Buerhoz</option>
+                              <option value="Nuth">Nuth</option>
+                            </select>
+                          </p>
+                                
+                        <div *ngIf="showErrorMessageComplete">
+                            <h6>Todos los campos son obligatorios</h6>
+                        </div>
+                      </form>
+                      <button class="btn btn-success" type="button" (click)="getfroms();openCentrado(contenido)">Crear Usuario</button>
+                    </div>
+  
+                </div>
+              </div>
+            </div>
+            <ng-template #contenido let-modal>
+              <div class="modal-header">
+                  <h4 class="modal-title">Usuario creado correctamente</h4>
+                  
+                      
+               
+              </div>
+              <div class="modal-body">
+                  <h6>Tu usuario fue creado de forma correcta.Te redireccionaremos a la pantalla de login para que puedas empezar a usar nuestros servicios</h6>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-success" (click)="modal.close()" routerLink ="/login">Ok!</button>
+              </div>
+          </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

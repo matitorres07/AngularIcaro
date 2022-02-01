@@ -1,0 +1,36 @@
+<div id = "hero1">
+
+  <video loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+    <source src="./assets/video/video6.mp4" type="video/mp4">
+  </video>
+
+  <div class="content d-flex justify-content-center align-items-center">
+    <div class="conteiner text-center">
+      <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="https://icaro.org.ar/assets/img/sponsor-1.png" id="icon" alt="User Icon" />
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="Usuario" [formControl]="emailControl">
+            <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña" [formControl]="passControl">
+            <input type="submit" class="fadeIn fourth" value="Log In" (click)="loginUser($event)"  >
+            <div *ngIf="showErrorMessage">
+              <h6 style="color: red;">Contraseña o Usuario equivocados</h6>
+            </div>
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" routerLink ="/altas">No tenes una cuenta? registate aca!</a>
+          </div>
+      
+        </div>
+      </div>
+  </div>
+</div>

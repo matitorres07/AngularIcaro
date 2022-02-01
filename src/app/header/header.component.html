@@ -1,0 +1,26 @@
+<div class="hero">
+    <header class="header">
+        <a routerLink ="/login"><img src="https://icaro.org.ar/assets/img/Logo.png" alt="" class="header-logo"></a>
+        
+        <nav class="header-nav">
+            <div class="div-carrito">
+                <div class = 'div-carrito2'>
+                    
+                </div>
+                <div class="content d-flex justify-content-center align-items-center">
+                    <div *ngIf="showUnlogin">
+                        <button class="btn btn-dark" type="submit" (click) = "unlogin()" routerLink ="/login">Desloguearse</button>
+                    </div>
+                    
+                    <div class="user" >
+                        <p style="color: aliceblue;font-family: Georgia, 'Times New Roman', Times, serif;">{{storedItems}}</p>
+                    </div>
+
+                </div>
+                
+            </div>
+        </nav>
+        
+    </header>
+</div>
+
